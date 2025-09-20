@@ -32,19 +32,25 @@ class FirstController extends Controller
    {
 
     // url = first/test-first
-       $hello = 'test-first, World!';
-       echo $hello;
-       die;
-       //sreturn $this->render('index', compact('hello'));
+    //    $hello = 'test-first, World!';
+    //    echo $hello;
+    //    die;
+        $this->layout= false;
+       return $this->render('test');
    }
 
    public function actionTest_second()
    {
 
-    // url = first/test
-       $hello = 'test_second, World!';
-       echo $hello;
-       die;
+    // url = first/test_second
+    //    $hello = 'test_second, World!';
+    //    echo $hello;
+    //    die;
+    //render patrial not use the layout
+        $ressponse = [];
+        $response['name'] = "Sachin";
+        $response['list'] = ['test','demo','crud'];
+        return $this->renderPartial('test',$response);
        //sreturn $this->render('index', compact('hello'));
    }
 
