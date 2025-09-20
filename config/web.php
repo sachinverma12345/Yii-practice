@@ -43,20 +43,33 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
+        'db' => $db['db1'],
+        'db2' => $db['db2'],
+        // 'db2' =>[
+        //     'class' => 'yii\db\Connection',
+        //     'dsn' => 'mysql:host=localhost;dbname=ballone',
+        //     'username' => 'root',
+        //     'password' => '',
+        //     'charset' => 'utf8',
+
+        //     // Schema cache options (for production environment)
+        //     //'enableSchemaCache' => true,
+        //     //'schemaCacheDuration' => 60,
+        //     //'schemaCache' => 'cache',
+        //     ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 'mytest' => 'first/test-first',
                 'mytest2' => 'first/test_second',
-                [
-                    'pattern' => 'first/<other>',
-                    'route' => 'first/info',
-                    'defaults' => [
-                        'ctegory'=>'test category','key'=>'12345',
-                    ]
-                    ],
+                // [
+                //     'pattern' => 'first/<other>',
+                //     'route' => 'first/info',
+                //     'defaults' => [
+                //         'ctegory'=>'test category','key'=>'12345',
+                //     ]
+                //     ],
 
                 [
                     'pattern' => 'second/<other>',

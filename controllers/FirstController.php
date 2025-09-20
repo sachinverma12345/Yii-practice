@@ -20,12 +20,15 @@ class FirstController extends Controller
         //sreturn $this->render('index', compact('hello'));
     }
 
-    public function actionTest()
+    public function actionTestDb()
     {
 
         // url = first/test
         $hello = 'test, World!';
         echo $hello;
+        $data = Yii::$app->db2->createCommand('select * from users')->queryAll();
+        echo "<pre>";
+        print_r($data);
         die;
         //sreturn $this->render('index', compact('hello'));
     }
