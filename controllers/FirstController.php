@@ -10,7 +10,9 @@ class FirstController extends Controller
 {
     public function actionIndex()
     {
-
+        $data = Yii::$app->db->createCommand('select * from users')->queryAll();
+        echo "<pre>";
+        print_r($data);
         // url = first/index
         $hello = 'Hello, World!';
         echo $hello;
