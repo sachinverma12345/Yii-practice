@@ -44,14 +44,29 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'mytest' => 'first/test-first',
+                'mytest2' => 'first/test_second',
+                [
+                    'pattern' => 'first/<other>',
+                    'route' => 'first/info',
+                    'defaults' => [
+                        'ctegory'=>'test category','key'=>'12345',
+                    ]
+                    ],
+
+                [
+                    'pattern' => 'second/<other>',
+                    'route' => 'first/demo',
+                    'defaults' => [
+                        'ctegory'=>'second test category','key'=>'12345',
+                    ]
+                    ],
             ],
         ],
-        */
     ],
     'params' => $params,
 ];

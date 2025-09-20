@@ -8,51 +8,66 @@ use yii\web\Controller;
 
 class FirstController extends Controller
 {
-   public function actionIndex()
-   {
+    public function actionIndex()
+    {
 
-    // url = first/index
-       $hello = 'Hello, World!';
-       echo $hello;
-       die;
-       //sreturn $this->render('index', compact('hello'));
-   }
+        // url = first/index
+        $hello = 'Hello, World!';
+        echo $hello;
+        die;
+        //sreturn $this->render('index', compact('hello'));
+    }
 
-   public function actionTest()
-   {
+    public function actionTest()
+    {
 
-    // url = first/test
-       $hello = 'test, World!';
-       echo $hello;
-       die;
-       //sreturn $this->render('index', compact('hello'));
-   }
+        // url = first/test
+        $hello = 'test, World!';
+        echo $hello;
+        die;
+        //sreturn $this->render('index', compact('hello'));
+    }
 
-   public function actionTestFirst()
-   {
+    public function actionTestFirst()
+    {
 
-    // url = first/test-first
-    //    $hello = 'test-first, World!';
-    //    echo $hello;
-    //    die;
-        $this->layout= false;
-       return $this->render('test');
-   }
-
-   public function actionTest_second()
-   {
-
-    // url = first/test_second
-    //    $hello = 'test_second, World!';
-    //    echo $hello;
-    //    die;
-    //render patrial not use the layout
-        $ressponse = [];
+        // url = first/test-first
+        //    $hello = 'test-first, World!';
+        //    echo $hello;
+        //    die;
+        $this->layout = false;
+        $response = [];
         $response['name'] = "Sachin";
-        $response['list'] = ['test','demo','crud'];
-        return $this->render('test',$response);
-       //sreturn $this->render('index', compact('hello'));
-   }
+        $response['list'] = ['test', 'demo', 'crud'];
 
+        return $this->render('test', $response);
+    }
 
+    public function actionTest_second()
+    {
+
+        // url = first/test_second
+        //    $hello = 'test_second, World!';
+        //    echo $hello;
+        //    die;
+        //render patrial not use the layout
+        $response = [];
+        $response['name'] = "Sachin";
+        $response['list'] = ['test', 'demo', 'crud'];
+        return $this->render('test', $response);
+        //sreturn $this->render('index', compact('hello'));
+    }
+
+    public function actionInfo()
+    {
+        $data = Yii::$app->request->get();
+        print_r($data);
+        echo "info page";
+    }
+    public function actionDemo()
+    {
+        $data = Yii::$app->request->get();
+        print_r($data);
+        echo "info page";
+    }
 }
