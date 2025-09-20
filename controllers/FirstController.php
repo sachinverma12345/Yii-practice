@@ -50,7 +50,7 @@ class FirstController extends Controller
         $ressponse = [];
         $response['name'] = "Sachin";
         $response['list'] = ['test','demo','crud'];
-        return $this->renderPartial('test',$response);
+        return $this->render('test',$response);
        //sreturn $this->render('index', compact('hello'));
    }
 
