@@ -43,8 +43,8 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db['db1'],
-        'db2' => $db['db2'],
+        'db' => $db,
+        // 'db2' => $db['db2'],
         // 'db2' =>[
         //     'class' => 'yii\db\Connection',
         //     'dsn' => 'mysql:host=localhost;dbname=ballone',
