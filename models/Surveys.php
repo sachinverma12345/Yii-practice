@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\Query;
 
 /**
  * This is the model class for table "surveys".
@@ -71,6 +72,48 @@ class Surveys extends \yii\db\ActiveRecord
     public function getSubmitSurveys()
     {
         return $this->hasMany(SubmitSurveys::class, ['survey_id' => 'id']);
+    }
+
+    public function getData(){
+        // $sql = Yii::$app->db->createCommand()->insert('surveys',
+        // [
+        //     'title' => 'test new',
+        //     'description' => "This is demo descriptio",
+        //     'survey_id' => '8888'
+        // ])->execute();
+
+        // $lastId = Yii::$app->db->lastInsertID;
+        // echo $lastId;
+
+        // ---------update
+
+
+        //  $sql = Yii::$app->db->createCommand()->update('surveys',
+        // [
+        //     'title' => 'test new update',
+        //     'description' => "This is demo description update",
+        //     'survey_id' => '8888_999'
+        // ],['id'=>38])->execute();
+
+        // --- delete 
+
+        //   $sql = Yii::$app->db->createCommand()->delete('surveys',
+        // ['id'=>38])->execute();
+
+
+        //--------------- select ----- 
+
+
+        $query = (new Query())
+        ->select('surveys.*')
+        ->from('surveys')
+        ->where(['title'=>'test'])
+        ->leftJoin('questions', 'questions.survey_id=surveys.id')
+        // ->all();
+        // echo $query->createCommand()->getRawSql();
+         ->one();
+        // print_r($query);
+
     }
 
 }

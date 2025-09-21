@@ -66,4 +66,16 @@ class SurveyController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    public function actionQueryBuilder()
+    {
+       
+      $data = new Surveys();
+      $data->getData();
+
+        // print_r($data);
+        // die;
+
+        // return $this->render('index');
+    }
+
 }
